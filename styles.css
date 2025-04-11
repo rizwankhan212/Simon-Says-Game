@@ -1,0 +1,131 @@
+/* General Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.5s ease;
+  }
+  
+  .parent {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+  }
+  
+  /* Button (Game Pads) Styles */
+  .btns {
+    display: grid;
+    grid-template-rows: repeat(2, 200px);
+    grid-template-columns: repeat(2, 200px);
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Styling for each button, using a common id selector for shared features */
+  #inbtn {
+    border: 5px solid #333;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  #inbtn:hover {
+    transform: scale(1.05);
+    filter: brightness(110%);
+  }
+  
+  /* Color-specific Styles */
+  .red {
+    background: linear-gradient(135deg, #f36979, #d95980);
+  }
+  .green {
+    background: linear-gradient(135deg, #70d6a1, #63aac0);
+  }
+  .yellow {
+    background: linear-gradient(135deg, #fdd835, #f99b45);
+  }
+  .purple {
+    background: linear-gradient(135deg, #8a9afc, #819ff9);
+  }
+  
+  /* Flash Effect */
+  .flash {
+    animation: flashAnimation 0.25s ease;
+  }
+  
+  @keyframes flashAnimation {
+    0% {
+      filter: brightness(1);
+    }
+    50% {
+      filter: brightness(1.8);
+    }
+    100% {
+      filter: brightness(1);
+    }
+  }
+  
+  /* Game Over Effect */
+  .end {
+    background: red;
+  }
+  
+  /* Responsive Design with Media Queries */
+  
+  /* Small Devices (Mobile) */
+  @media screen and (max-width: 600px) {
+    .btns {
+      grid-template-rows: repeat(2, 150px);
+      grid-template-columns: repeat(2, 150px);
+      gap: 15px;
+    }
+    
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+    }
+  }
+  
+  /* Medium Devices (Tablets) */
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    .btns {
+      grid-template-rows: repeat(2, 180px);
+      grid-template-columns: repeat(2, 180px);
+      gap: 20px;
+    }
+    
+    h1 {
+      font-size: 2.3rem;
+    }
+    h2 {
+      font-size: 1.4rem;
+    }
+  }
+  
