@@ -14,7 +14,7 @@ function gameStart(){
     }
 }
 document.addEventListener("keypress",gameStart);
-body.addEventListener("click",gameStart);
+document.addEventListener("dblclick",gameStart);
 
 function btnFlash(btn) {
     btn.classList.add("flash");
